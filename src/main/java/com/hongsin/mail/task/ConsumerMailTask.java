@@ -1,18 +1,15 @@
 package com.hongsin.mail.task;
 
-import javax.mail.MessagingException;
-
+import com.hongsin.mail.entity.MailSend;
+import com.hongsin.mail.enumeration.RedisPriorityQueue;
+import com.hongsin.mail.service.MailSendService;
+import com.hongsin.mail.utils.FastJsonConvertUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-
-import com.hongsin.mail.entity.MailSend;
-import com.hongsin.mail.enumeration.RedisPriorityQueue;
-import com.hongsin.mail.service.MailSendService;
-import com.hongsin.mail.utils.FastJsonConvertUtil;
 
 @Component
 public class ConsumerMailTask {
